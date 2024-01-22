@@ -27,8 +27,7 @@ namespace API.Controllers
             return users;
         }
 
-        [HttpGet]
-        [Route("{id}")]
+        [HttpGet("{id}")]
         public async Task<ActionResult<AppUser>> GetUserById(int id)
         {
             return await _dbContext.Users.FindAsync(id);
