@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AccountService } from '../services/account.service';
 
 import { Router } from '@angular/router';
-import { ToastrModule, ToastrService } from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-navbar',
@@ -25,8 +26,8 @@ export class NavbarComponent implements OnInit {
   login() {
     this._accountService.login(this.model).subscribe({
       next: _ =>
-      this.router.navigateByUrl("/members"),
-      error: err => this.toast.error(err.error)
+      this.router.navigateByUrl("/members")
+      
     })
   }
 
